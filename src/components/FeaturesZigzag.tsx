@@ -82,8 +82,8 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="h3 mb-3">{service1}</h3>
-                  <p className="text-xl text-gray-400 mb-4">{service1desc}</p>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">{service1}</h3>
+                  <p className="h3 mb-3 text-xl text-gray-400 mb-4">{service1desc}</p>
                 </div>
               </div>
             )}
@@ -106,7 +106,7 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="h3 mb-3">{service2}</h3>
+                  <h3 className="h3 mb-3 text-3xl font-bold mb-4 tracking-tight text-gray-900">{service2}</h3>
                   <p className="text-xl text-gray-400 mb-4">{service2desc}</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="h3 mb-3">{service3}</h3>
+                  <h3 className="h3 mb-3 text-3xl font-bold mb-4 tracking-tight text-gray-900">{service3}</h3>
                   <p className="text-xl text-gray-400 mb-4">{service3desc}</p>
                 </div>
               </div>

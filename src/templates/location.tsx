@@ -148,9 +148,9 @@ const Location: Template<TemplateRenderProps> = ({
         <About description={description} />
         <FeaturesZigzag 
         title={"Services"}
-        service1={c_service1} service1desc={c_service1Description} service1photo={c_servicePhotos[0]}
-        service2={c_service2} service2desc={c_service2Description} service2photo={c_servicePhotos[1]}
-        service3={c_service3} service3desc={c_service3Description} service3photo={c_servicePhotos[2]}
+        service1={c_service1} service1desc={c_service1Description} service1photo={c_servicePhotos[0].url}
+        service2={c_service2} service2desc={c_service2Description} service2photo={c_servicePhotos[1].url}
+        service3={c_service3} service3desc={c_service3Description} service3photo={c_servicePhotos[2].url}
         ></FeaturesZigzag>
         {hours && <Hours title={"Hours"} hours={hours} />}
         <Reviews entityid={id} title={"Reviews"}></Reviews>
