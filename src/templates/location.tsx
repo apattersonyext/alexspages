@@ -146,12 +146,17 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout data={data} templateData={{__meta, document}}>
         <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
         <About description={description} />
+        {c_servicePhotos && c_servicePhotos.length >= 3 && (
         <FeaturesZigzag 
         title={"Services"}
-        service1={c_service1} service1desc={c_service1Description} service1photo={c_servicePhotos[0].url}
-        service2={c_service2} service2desc={c_service2Description} service2photo={c_servicePhotos[1].url}
-        service3={c_service3} service3desc={c_service3Description} service3photo={c_servicePhotos[2].url}
-        ></FeaturesZigzag>
+        service1={c_service1} service1desc={c_service1Description} 
+        service1photo={c_servicePhotos[0].url}
+        service2={c_service2} service2desc={c_service2Description} 
+        service2photo={c_servicePhotos[1].url}
+        service3={c_service3} service3desc={c_service3Description} 
+        service3photo={c_servicePhotos[2].url}
+          />
+        )}
         {hours && <Hours title={"Hours"} hours={hours} />}
         <Reviews entityid={id} title={"Reviews"}></Reviews>
         <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>

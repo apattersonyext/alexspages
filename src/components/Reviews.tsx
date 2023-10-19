@@ -116,7 +116,7 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
   const settings: Settings = {
     dots: true,
     arrows: true,
-    infinite: true,
+    infinite: false,
     speed: 300,
     slidesToShow: 3, // Display up to 3 cards before requiring a click
     slidesToScroll: 1,
