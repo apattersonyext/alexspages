@@ -42,6 +42,13 @@ export const config: TemplateConfig = {
       "hours",
       "slug",
       "logo",
+      "c_service1Description",
+      "c_service2Description",
+      "c_service3Description",
+      "c_service1",
+      "c_service2",
+      "c_service3",
+      "c_servicePhotos",
       "services",
       "photoGallery",
       "c_tagline",
@@ -117,6 +124,13 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     emails,
+    c_service1Description,
+    c_service2Description,
+    c_service3Description,
+    c_service1,
+    c_service2,
+    c_service3,
+    c_servicePhotos,
     logo,
     id,
     c_tagline,
@@ -134,9 +148,9 @@ const Location: Template<TemplateRenderProps> = ({
         <About description={description} />
         <FeaturesZigzag 
         title={"Services"}
-        // service1={} service1desc={} service1photo={}
-        // service2={} service2desc={} service2photo={}
-        // service3={} service3desc={} service3photo={}
+        service1={c_service1} service1desc={c_service1Description} service1photo={c_servicePhotos[0]}
+        service2={c_service2} service2desc={c_service2Description} service2photo={c_servicePhotos[1]}
+        service3={c_service3} service3desc={c_service3Description} service3photo={c_servicePhotos[2]}
         ></FeaturesZigzag>
         {hours && <Hours title={"Hours"} hours={hours} />}
         <Reviews entityid={id} title={"Reviews"}></Reviews>
