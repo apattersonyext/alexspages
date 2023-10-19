@@ -43,6 +43,7 @@ export const config: TemplateConfig = {
       "logo",
       "services",
       "photoGallery",
+      "c_tagline",
       "paymentOptions",
       "emails",
       "yextDisplayCoordinate",
@@ -119,18 +120,19 @@ const Location: Template<TemplateRenderProps> = ({
     emails,
     logo,
     id,
+    c_tagline,
     photoGallery,
     yextDisplayCoordinate,
     c_backgroundColor
   } = document;
 
-  const data = { mainPhone, emails, logo, c_backgroundColor }
+  const data = { mainPhone, emails, logo, c_tagline, c_backgroundColor }
 
   return (
     <>
       <Schema data={document} />
       <PageLayout data={data} templateData={{__meta, document}}>
-        <Banner name={name} photoGallery={photoGallery} />
+        <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
         <About description={description} />
         {hours && <Hours title={"Hours"} hours={hours} />}
         <Reviews entityid={id} title={"Reviews"}></Reviews>

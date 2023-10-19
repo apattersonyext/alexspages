@@ -19,10 +19,10 @@ const year = currentTime.getFullYear();
 
 const navigation = {
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
+    // { name: "About", href: "#" },
+    // { name: "Blog", href: "#" },
+    // { name: "Jobs", href: "#" },
+    // { name: "Press", href: "#" },
   ],
   legal: [
     { name: "Claim", href: "#" },
@@ -51,13 +51,13 @@ const navigation = {
         props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
       ) => <Twitter {...props} />,
     },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: (
-        props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-      ) => <GitHub {...props} />,
-    },
+    // {
+    //   name: "GitHub",
+    //   href: "#",
+    //   icon: (
+    //     props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+    //   ) => <GitHub {...props} />,
+    // },
     {
       name: "YouTube",
       href: "#",

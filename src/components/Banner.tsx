@@ -5,9 +5,10 @@ export interface BannerProps {
   name?: string;
   paragraph?: string;
   photoGallery?: any;
+  tagline?: string
 }
 
-const Banner = ({ name, paragraph, photoGallery }: BannerProps) => {
+const Banner = ({ name, paragraph, tagline, photoGallery }: BannerProps) => {
 
   return (
     <>
@@ -20,7 +21,7 @@ const Banner = ({ name, paragraph, photoGallery }: BannerProps) => {
           <div className="absolute inset-0 flex flex-col items-center justify-center mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-normal text-white sm:text-6xl">{name}</h1>
             <p className="mt-6 text-lg leading-8 text-gray-100 tracking-wide">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {tagline}
             </p>
           </div>
         </div>

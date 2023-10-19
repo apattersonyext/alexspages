@@ -133,7 +133,7 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
     <>
       <div className="mx-auto px-5 md:px-14 bg-gray-100 pt-8 pb-24">
       <h2 className="section text-3xl text-center tracking-tight font-bold">
-            <a id="gallery">{title}</a>
+            <a id="reviews">{title}</a>
           </h2>
         {loading ? (
           <p>Loading reviews...</p>
