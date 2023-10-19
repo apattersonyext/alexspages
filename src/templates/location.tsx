@@ -20,6 +20,7 @@ import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
 import Schema from "../components/Schema";
 import ContactSection from "../components/ContactSection";
+import Reviews from "../components/Reviews"
 
 
 
@@ -117,6 +118,7 @@ const Location: Template<TemplateRenderProps> = ({
     description,
     emails,
     logo,
+    id,
     photoGallery,
     yextDisplayCoordinate,
     c_backgroundColor
@@ -131,6 +133,7 @@ const Location: Template<TemplateRenderProps> = ({
         <Banner name={name} photoGallery={photoGallery} />
         <About description={description} />
         {hours && <Hours title={"Hours"} hours={hours} />}
+        <Reviews entityid={id} title={"Reviews"}></Reviews>
         <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>
         <ContactSection address={address} phone={mainPhone} email={emails} />
       </PageLayout>

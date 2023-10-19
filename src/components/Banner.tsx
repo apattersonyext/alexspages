@@ -14,7 +14,7 @@ const Banner = ({ name, paragraph, photoGallery }: BannerProps) => {
 
       {photoGallery ?
         // If a photo is present, use it as background overlay
-        <div className="relative bg-gray-800 h-96">
+        <div className="relative bg-gray-600 h-96">
           <Image image={photoGallery[0]} className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center mx-auto max-w-2xl text-center">
