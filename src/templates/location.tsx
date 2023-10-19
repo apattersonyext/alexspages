@@ -21,6 +21,7 @@ import PageLayout from "../components/PageLayout";
 import Schema from "../components/Schema";
 import ContactSection from "../components/ContactSection";
 import Reviews from "../components/Reviews"
+import FeaturesZigzag from "../components/FeaturesZigzag";
 
 
 
@@ -46,8 +47,7 @@ export const config: TemplateConfig = {
       "c_tagline",
       "paymentOptions",
       "emails",
-      "yextDisplayCoordinate",
-      "c_backgroundColor"
+      "yextDisplayCoordinate"
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
@@ -56,7 +56,6 @@ export const config: TemplateConfig = {
     transform: {
       replaceOptionValuesWithDisplayNames: [
         "paymentOptions",
-        "c_backgroundColor"
       ],
     },
   },
@@ -122,11 +121,10 @@ const Location: Template<TemplateRenderProps> = ({
     id,
     c_tagline,
     photoGallery,
-    yextDisplayCoordinate,
-    c_backgroundColor
+    yextDisplayCoordinate
   } = document;
 
-  const data = { mainPhone, emails, logo, c_tagline, c_backgroundColor }
+  const data = { mainPhone, emails, logo, c_tagline }
 
   return (
     <>
@@ -134,6 +132,12 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout data={data} templateData={{__meta, document}}>
         <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
         <About description={description} />
+        <FeaturesZigzag 
+        title={"Services"}
+        // service1={} service1desc={} service1photo={}
+        // service2={} service2desc={} service2photo={}
+        // service3={} service3desc={} service3photo={}
+        ></FeaturesZigzag>
         {hours && <Hours title={"Hours"} hours={hours} />}
         <Reviews entityid={id} title={"Reviews"}></Reviews>
         <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>

@@ -132,9 +132,9 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
   return (
     <>
       <div className="mx-auto px-5 md:px-14 bg-gray-100 pt-8 pb-24">
-      <h2 className="section text-3xl text-center tracking-tight font-bold">
-            <a id="reviews">{title}</a>
-          </h2>
+        <h2 className="section text-3xl text-center tracking-tight font-bold">
+          <a id="reviews">{title}</a>
+        </h2>
         {loading ? (
           <p>Loading reviews...</p>
         ) : reviews.length > 0 ? (
@@ -151,9 +151,7 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
               </div>
             ))}
           </Slider>
-        ) : (
-          <p>No reviews found for this entity.</p>
-        )}
+        ) : null}
       </div>
     </>
   );
