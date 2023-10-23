@@ -37,7 +37,7 @@ const About = ({ description, mainphone, email }: AboutProps) => {
             </a>
             <a
               href={`mailto:${email}`}
-              className="text-xl px-8 py-4 ml-4 bg-white text-gray-900 border border-gray-300 rounded-lg hover-bg-gray-200 flex justify-center"
+              className="text-xl px-8 py-4 ml-4 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-200 flex justify-center"
               style={{ width: "200px" }}
             >
               <span className="mx-auto">
