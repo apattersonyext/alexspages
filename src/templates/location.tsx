@@ -145,7 +145,7 @@ const Location: Template<TemplateRenderProps> = ({
       <Schema data={document} />
       <PageLayout data={data} templateData={{__meta, document}}>
         <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
-        <About description={description} />
+        <About description={description} mainphone={mainPhone} email={emails}/>
         {c_servicePhotos && c_servicePhotos.length >= 3 && (
         <FeaturesZigzag 
         title={"Services"}

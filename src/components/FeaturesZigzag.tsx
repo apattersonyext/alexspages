@@ -73,7 +73,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full mx-auto rounded-xl md:max-w-none h-auto"
+                    className="max-w-full mx-auto rounded-xl md:max-w-none h-auto transform transition-transform hover:scale-105"
                     src={service1photo}
                     width="540"
                     height="405"
@@ -97,7 +97,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto"
+                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:scale-105"
                     src={service2photo}
                     width="540"
                     height="405"
@@ -121,7 +121,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto"
+                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:scale-105"
                     src={service3photo}
                     width="540"
                     height="405"
