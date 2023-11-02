@@ -52,6 +52,10 @@ export const config: TemplateConfig = {
       "services",
       "photoGallery",
       "c_tagline",
+      "c_toggleAbout",
+      "c_toggleGallery",
+      "c_toggleReviews",
+      "c_toggleServices",
       "paymentOptions",
       "emails",
       "yextDisplayCoordinate"
@@ -130,6 +134,10 @@ const Location: Template<TemplateRenderProps> = ({
     c_service1,
     c_service2,
     c_service3,
+    c_toggleAbout,
+    c_toggleGallery,
+    c_toggleReviews,
+    c_toggleServices,
     c_servicePhotos,
     logo,
     id,
@@ -145,21 +153,21 @@ const Location: Template<TemplateRenderProps> = ({
       <Schema data={document} />
       <PageLayout data={data} templateData={{__meta, document}}>
         <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
-        <About description={description} mainphone={mainPhone} email={emails}/>
-        {c_servicePhotos && c_servicePhotos.length >= 3 && (
-        <FeaturesZigzag 
-        title={"Services"}
-        service1={c_service1} service1desc={c_service1Description} 
-        service1photo={c_servicePhotos[0].url}
-        service2={c_service2} service2desc={c_service2Description} 
-        service2photo={c_servicePhotos[1].url}
-        service3={c_service3} service3desc={c_service3Description} 
-        service3photo={c_servicePhotos[2].url}
+        {c_toggleAbout === true && <About description={description} mainphone={mainPhone} email={emails} />}
+        {c_toggleServices === true && c_servicePhotos && c_servicePhotos.length >= 3 && (
+          <FeaturesZigzag
+            title={"Services"}
+            service1={c_service1} service1desc={c_service1Description}
+            service1photo={c_servicePhotos[0].url}
+            service2={c_service2} service2desc={c_service2Description}
+            service2photo={c_servicePhotos[1].url}
+            service3={c_service3} service3desc={c_service3Description}
+            service3photo={c_servicePhotos[2].url}
           />
         )}
         {hours && <Hours title={"Hours"} hours={hours} />}
-        <Reviews entityid={id} title={"Reviews"}></Reviews>
-        <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>
+        {c_toggleReviews === true && <Reviews entityid={id} title={"Reviews"}></Reviews>}
+        {c_toggleGallery === true && <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>}
         <ContactSection address={address} phone={mainPhone} email={emails} />
       </PageLayout>
     </>

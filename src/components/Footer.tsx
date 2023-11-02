@@ -103,6 +103,7 @@ const Footer = ( { paragraph }: FooterProps) => {
           &copy; 2023 Your Company, Inc. All rights reserved.
         </p>
       </div>
+      
     </footer>
   );
 };
