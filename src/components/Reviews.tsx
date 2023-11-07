@@ -49,6 +49,91 @@ const PrevArrow = ({ className, style, onClick }: ArrowProps) => {
 const Reviews = ({ title, entityid }: ReviewsProps) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    authorName: "",
+    authorEmail: "",
+    rating: 1,
+    content: "",
+  });
+
+  const openForm = () => {
+    setIsFormOpen(true);
+  };
+
+  const closeForm = () => {
+    setIsFormOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const submitReview = () => {
+    const apiKey = "ca0b63e4d4dd522282395a103626ff77";
+    const apiUrl = `https://sbx-cdn.yextapis.com/v2/accounts/me/reviewSubmission?api_key=${apiKey}&v=20231107`;
+
+    const requestBody = {
+      entity: {
+        id: entityid,
+      },
+      authorName: formData.authorName,
+      authorEmail: formData.authorEmail,
+      rating: formData.rating,
+      content: formData.content,
+      status: "LIVE",
+    };
+
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the API response as needed
+        // You can update the UI to show a success message or handle errors here.
+        closeForm();
+      })
+      .catch((error) => {
+        console.error("Error submitting review:", error);
+        // Handle the error
+      });
+  };
+
+  const StarRating = ({ value, onChange }) => {
+    const maxRating = 5;
+  
+    const handleStarClick = (rating) => {
+      onChange(rating);
+    };
+  
+    return (
+      <div className="flex">
+        {Array.from({ length: maxRating }, (_, index) => {
+          const starValue = index + 1;
+          return (
+            <span
+              key={starValue}
+              className={`cursor-pointer text-xl ${
+                starValue <= value ? "text-yellow-400" : "text-gray-300"
+              }`}
+              onClick={() => handleStarClick(starValue)}
+            >
+              &#9733;
+            </span>
+          );
+        })}
+      </div>
+    );
+  };
+  
 
   useEffect(() => {
     const apiKey = "ca0b63e4d4dd522282395a103626ff77";
@@ -152,6 +237,95 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
             ))}
           </Slider>
         ) : null}
+
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={openForm}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-4 rounded-lg"
+          >
+            Write a Review
+          </button>
+        </div>
+
+        {/* Review submission form as a popup */}
+        {isFormOpen && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <div className="flex justify-end">
+              <button
+                onClick={closeForm}
+                className="text-gray-500 hover:text-gray-700 cursor-pointer"
+              >
+                X
+              </button>
+            </div>
+            <h3 className="text-xl font-semibold mb-4">Submit a Review</h3>
+            <form>
+              <div className="mb-4">
+                  <label className="block text-gray-600" htmlFor="authorName">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="authorName"
+                    name="authorName"
+                    value={formData.authorName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-600" htmlFor="authorEmail">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="authorEmail"
+                    name="authorEmail"
+                    value={formData.authorEmail}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-600">Rating</label>
+                  <StarRating
+                    value={formData.rating}
+                    onChange={(value) =>
+                      setFormData({ ...formData, rating: value })
+                    }
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-600" htmlFor="content">
+                    Content
+                  </label>
+                  <textarea
+                    id="content"
+                    name="content"
+                    value={formData.content}
+                    onChange={handleInputChange}
+                    required
+                    rows="4"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                  />
+                </div>
+                <div className="mt-4">
+                  <button
+                    type="button"
+                    onClick={submitReview}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg"
+                  >
+                    Submit Review
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
       </div>
     </>
   );
