@@ -50,6 +50,7 @@ export const config: TemplateConfig = {
       "c_service3",
       "c_servicePhotos",
       "services",
+      "c_font",
       "photoGallery",
       "c_tagline",
       "c_toggleAbout",
@@ -71,6 +72,7 @@ export const config: TemplateConfig = {
     },
   },
 };
+
 
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
@@ -114,7 +116,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 
-
 const Location: Template<TemplateRenderProps> = ({
   __meta,
   relativePrefixToRoot,
@@ -141,6 +142,7 @@ const Location: Template<TemplateRenderProps> = ({
     c_servicePhotos,
     logo,
     id,
+    c_font,
     c_tagline,
     photoGallery,
     yextDisplayCoordinate
@@ -151,8 +153,9 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <Schema data={document} />
+      <div style={{ fontFamily: c_font }}>
       <PageLayout data={data} templateData={{__meta, document}}>
-        <Banner name={name} tagline={c_tagline} photoGallery={photoGallery} />
+        <Banner name={name} tagline={c_tagline} photoGallery={photoGallery}/>
         {c_toggleAbout === true && <About description={description} mainphone={mainPhone} email={emails} />}
         {c_toggleServices === true && c_servicePhotos && c_servicePhotos.length >= 3 && (
           <FeaturesZigzag
@@ -170,6 +173,7 @@ const Location: Template<TemplateRenderProps> = ({
         {c_toggleGallery === true && <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>}
         <ContactSection address={address} phone={mainPhone} email={emails} />
       </PageLayout>
+      </div>
     </>
   );
 };

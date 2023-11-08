@@ -12,6 +12,7 @@ export interface HeaderProps {
 
 const navigation = [
   { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
   { name: "Hours", href: "#hours" },
   { name: "Reviews", href: "#reviews" },
   { name: "Gallery", href: "#gallery" },
