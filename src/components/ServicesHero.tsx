@@ -13,7 +13,7 @@ export interface BannerProps {
 
 const ServicesHero = ({ pageTitle, imageUrl, description, mainphone, email }: BannerProps) => {
   return (
-    <div className="bg-white py-14">
+    <div className="bg-white pb-14">
       <div className="relative">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 lg:w-full lg:max-w-2xl">
