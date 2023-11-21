@@ -182,7 +182,7 @@ const Carousel = ({ title, photoGallery }: CarouselProps) => {
           <h2 className="section text-4xl text-center tracking-tight font-bold">
             <a id="gallery">{title}</a>
           </h2>
-          <Slider {...settings} className="drop-shadow sm:px-3 sm:mx-3  md:px-5">{photoDivs}</Slider> 
+          <Slider {...settings} className="drop-shadow sm:px-3 sm:mx-3 md:px-5">{photoDivs}</Slider> 
         </div>
     </>
   );

@@ -16,7 +16,7 @@ export interface ContactSectionProps {
 const ContactSection = ({ address, phone, email, latitude, longitude }: ContactSectionProps) => {
   return (
     <>
-      <div className="relative px-14 py-14 isolate bg-white">
+      <div className="relative px-14 py-14 mx-32 isolate bg-white">
         <div className="mx-auto grid max-w-7xl ">
         <div className="relative lg:static grid lg:grid-cols-2">
             <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
