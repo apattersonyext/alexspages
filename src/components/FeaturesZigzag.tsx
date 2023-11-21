@@ -52,11 +52,11 @@ const FeaturesZigzag = ({
 
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-gray-800">
           {/* Section header */}
           <div className="max-w-4xl mx-auto text-center pb-12 md:pb-16">
-          <h2 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">
+          <h2 className="text-4xl font-bold mb-4 tracking-tight text-gray-900">
           <a id="services">{title}</a>
         </h2>
 
@@ -73,7 +73,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full mx-auto rounded-xl md:max-w-none h-auto transform transition-transform hover:scale-105"
+                    className="max-w-full mx-auto rounded-xl md:max-w-none h-auto transform transition-transform hover:drop-shadow-lg"
                     src={service1photo}
                     width="540"
                     height="405"
@@ -82,8 +82,8 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">{service1}</h3>
-                  <p className="h3 mb-3 text-lg text-gray-400 mb-4">{service1desc}</p>
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight text-gray-900">{service1}</h3>
+                  <p className="h3 mb-3 text-lg text-gray-500 mb-4">{service1desc}</p>
                 </div>
               </div>
             )}
@@ -97,7 +97,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:scale-105"
+                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:drop-shadow-lg"
                     src={service2photo}
                     width="540"
                     height="405"
@@ -106,8 +106,8 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="h3 mb-3 text-3xl font-bold mb-4 tracking-tight text-gray-900">{service2}</h3>
-                  <p className="text-lg text-gray-400 mb-4">{service2desc}</p>
+                  <h3 className="h3 mb-3 text-2xl font-bold mb-4 tracking-tight text-gray-900">{service2}</h3>
+                  <p className="text-lg text-gray-500 mb-4">{service2desc}</p>
                 </div>
               </div>
             )}
@@ -121,7 +121,7 @@ const FeaturesZigzag = ({
                   data-aos="fade-up"
                 >
                   <img
-                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:scale-105"
+                    className="max-w-full rounded-xl mx-auto md:max-w-none h-auto transform transition-transform hover:drop-shadow-lg"
                     src={service3photo}
                     width="540"
                     height="405"
@@ -130,8 +130,8 @@ const FeaturesZigzag = ({
                 {/* Content */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                   <div className={`font-sans-serif text-2xl ${getColorClasses()} mb-2`}></div>
-                  <h3 className="h3 mb-3 text-3xl font-bold mb-4 tracking-tight text-gray-900">{service3}</h3>
-                  <p className="text-lg text-gray-400 mb-4">{service3desc}</p>
+                  <h3 className="h3 mb-3 text-2xl font-bold mb-4 tracking-tight text-gray-900">{service3}</h3>
+                  <p className="text-lg text-gray-500 mb-4">{service3desc}</p>
                 </div>
               </div>
             )}

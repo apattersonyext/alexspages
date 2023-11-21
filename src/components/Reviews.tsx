@@ -216,8 +216,8 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
 
   return (
     <>
-      <div className="mx-auto px-5 md:px-14 bg-gray-100 pt-8 pb-24">
-        <h2 className="section text-3xl text-center tracking-tight font-bold">
+      <div className=" max-w-7xl mx-auto px-5 md:px-14 pt-8 pb-24">
+        <h2 className="section text-4xl text-gray-900 text-center tracking-tight font-bold">
           <a id="reviews">{title}</a>
         </h2>
         {loading ? (
@@ -241,7 +241,7 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
         <div className="mt-10 flex justify-center">
           <button
             onClick={openForm}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-4 rounded-lg"
+            className="rounded-md border border-gray-950 text-gray-900 font-semibold px-6 py-4 rounded-lg"
           >
             Write a Review
           </button>

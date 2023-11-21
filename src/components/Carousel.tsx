@@ -178,8 +178,8 @@ const Carousel = ({ title, photoGallery }: CarouselProps) => {
   const isBreakpoint = useMediaQuery(768);
   return (
     <>
-        <div className="mx-auto px-5 md:px-14 bg-gray-100 pt-8 pb-24">
-          <h2 className="section text-3xl text-center tracking-tight font-bold">
+        <div className="mx-auto max-w-7xl px-5 md:px-14 pb-24">
+          <h2 className="section text-4xl text-center tracking-tight font-bold">
             <a id="gallery">{title}</a>
           </h2>
           <Slider {...settings} className="drop-shadow sm:px-3 sm:mx-3  md:px-5">{photoDivs}</Slider> 

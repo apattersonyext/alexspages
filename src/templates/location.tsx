@@ -22,6 +22,9 @@ import Schema from "../components/Schema";
 import ContactSection from "../components/ContactSection";
 import Reviews from "../components/Reviews"
 import FeaturesZigzag from "../components/FeaturesZigzag";
+import ServicesHero from "../components/ServicesHero";
+import StaticMap from "../components/StaticMap";
+import LetsTalk from "../components/LetsTalk";
 
 
 
@@ -53,6 +56,7 @@ export const config: TemplateConfig = {
       "c_font",
       "photoGallery",
       "c_tagline",
+      "geocodedCoordinate",
       "c_toggleAbout",
       "c_toggleGallery",
       "c_toggleReviews",
@@ -145,6 +149,7 @@ const Location: Template<TemplateRenderProps> = ({
     c_font,
     c_tagline,
     photoGallery,
+    geocodedCoordinate,
     yextDisplayCoordinate
   } = document;
 
@@ -155,8 +160,9 @@ const Location: Template<TemplateRenderProps> = ({
       <Schema data={document} />
       <div style={{ fontFamily: c_font }}>
       <PageLayout data={data} templateData={{__meta, document}}>
-        <Banner name={name} tagline={c_tagline} photoGallery={photoGallery}/>
-        {c_toggleAbout === true && <About description={description} mainphone={mainPhone} email={emails} />}
+        <ServicesHero pageTitle={name} imageUrl={photoGallery[1].image.url} mainphone={mainPhone} email={emails} description={description}></ServicesHero>
+        {/* <Banner name={name} tagline={c_tagline} photoGallery={photoGallery}/> */}
+        {/* {c_toggleAbout === true && <About description={description} mainphone={mainPhone} email={emails} />} */}
         {c_toggleServices === true && c_servicePhotos && c_servicePhotos.length >= 3 && (
           <FeaturesZigzag
             title={"Services"}
@@ -168,10 +174,15 @@ const Location: Template<TemplateRenderProps> = ({
             service3photo={c_servicePhotos[2].url}
           />
         )}
-        {hours && <Hours title={"Hours"} hours={hours} />}
         {c_toggleReviews === true && <Reviews entityid={id} title={"Reviews"}></Reviews>}
+        <LetsTalk
+          description={document.description}
+          emails={document.emails[0]}
+          formattedPhone={mainPhone}
+          hours={hours}
+        ></LetsTalk>
+        <ContactSection address={address} phone={mainPhone} email={emails} latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude}/>
         {c_toggleGallery === true && <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>}
-        <ContactSection address={address} phone={mainPhone} email={emails} />
       </PageLayout>
       </div>
     </>

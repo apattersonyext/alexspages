@@ -13,8 +13,8 @@ export interface HeaderProps {
 const navigation = [
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Hours", href: "#hours" },
   { name: "Reviews", href: "#reviews" },
+  { name: "Hours", href: "#hours" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
@@ -28,12 +28,12 @@ const Header = ({ data }: HeaderProps) => {
 
   return (
     <header className="" style={{background: `var(--backgroundColor)`}}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-screen-2xl items-center justify-between text-lg p-10 lg:px-8" aria-label="Global">
         <div className="flex items-center gap-x-12">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             { data.logo ? (
-              <Image image={data.logo.image} layout="fixed" height={80} width={80} />
+              <Image image={data.logo.image} layout="fixed" height={110} width={110} />
               ) : (
                 <img className="h-24 w-auto rounded-md" src="https://logoipsum.com/logoipsum.png" alt="" />
             )}
