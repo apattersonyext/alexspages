@@ -17,7 +17,7 @@ const MapDescription = ({
 }: MapDescriptionProps) => {
   return (
     <div className="rounded-lg max-height-full">
-      <p className="whitespace-pre-line mr-2" style={{ color: textColor }}>
+      <p className="whitespace-pre-line mr-2 text-lg" style={{ color: textColor }}>
         {description}
       </p>
       <div className="flex flex-col md:flex-row gap-2 mb-2 mt-5 justify-between">
