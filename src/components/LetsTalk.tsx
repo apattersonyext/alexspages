@@ -28,7 +28,7 @@ const LetsTalk = ({
 }: LetsTalkProps) => {
   return (
     <div className="flex items-center justify-center">
-        <div className="max-w-7xl flex flex-col justify-center text-gray-900 px-10">
+        <div className="max-w-7xl flex flex-col justify-center text-gray-900 px-14 py-14">
         {/* <Title
             value={`Let's Talk`}
             textSize="4xl"

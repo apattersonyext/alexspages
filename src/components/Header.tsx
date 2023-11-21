@@ -16,7 +16,7 @@ const navigation = [
   { name: "Reviews", href: "#reviews" },
   { name: "Hours", href: "#hours" },
   { name: "Gallery", href: "#gallery" },
-  { name: "Contact", href: "#contact" },
+  // { name: "Contact", href: "#contact" },
 ];
 
 const Header = ({ data }: HeaderProps) => {

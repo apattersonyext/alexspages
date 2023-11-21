@@ -178,7 +178,7 @@ const Carousel = ({ title, photoGallery }: CarouselProps) => {
   const isBreakpoint = useMediaQuery(768);
   return (
     <>
-        <div className="mx-auto max-w-7xl px-5 md:px-14 pb-24">
+        <div className="mx-auto max-w-7xl px-14 py-14">
           <h2 className="section text-4xl text-center tracking-tight font-bold">
             <a id="gallery">{title}</a>
           </h2>
