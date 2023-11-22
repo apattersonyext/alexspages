@@ -31,9 +31,6 @@ import LetsTalk from "../components/LetsTalk";
 export const config: TemplateConfig = {
   stream: {
     $id: "Location",
-    filter: {
-      entityIds: [YEXT_PUBLIC_LOCATION_ENTITY_ID],
-    },
     fields: [
       "id",
       "uid",
