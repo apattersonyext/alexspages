@@ -144,7 +144,7 @@ const Hours = (props: HoursProps) => {
     <>
       <div className="px-4 text-center flex flex-col justify-center" style={{background: `var(--backgroundColor)`}}>
         <h2 className="text-4xl font-bold mb-4 tracking-tight text-gray-900">
-          <a id="hours">{title}</a>
+          <a >{title}</a>
         </h2>
         <table className=" text-gray-700">
           <thead className="sr-only">

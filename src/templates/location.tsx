@@ -63,10 +63,14 @@ export const config: TemplateConfig = {
       "c_toggleServices",
       "paymentOptions",
       "emails",
-      "yextDisplayCoordinate"
+      "yextDisplayCoordinate",
+      "c_reachOut",
+      "c_toggleHours",
+      "c_toggleContact",
+      "c_contactMessage"
     ],
     localization: {
-      locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
+      locales: ["en"],
       primary: false,
     },
     transform: {
@@ -150,17 +154,22 @@ const Location: Template<TemplateRenderProps> = ({
     c_tagline,
     photoGallery,
     geocodedCoordinate,
-    yextDisplayCoordinate
+    yextDisplayCoordinate,
+    c_reachOut,
+    c_toggleHours,
+    c_toggleContact,
+    c_contactMessage
+
   } = document;
 
-  const data = { mainPhone, emails, logo, c_tagline }
+  const data = { mainPhone, emails, logo, c_tagline, c_toggleAbout, c_toggleContact, c_toggleGallery, c_toggleHours, c_toggleReviews, c_toggleServices }
 
   return (
     <>
       <Schema data={document} />
       <div style={{ fontFamily: c_font }}>
       <PageLayout data={data} templateData={{__meta, document}}>
-        <ServicesHero pageTitle={name} imageUrl={photoGallery[1].image.url} mainphone={mainPhone} email={emails} description={description}></ServicesHero>
+      {c_toggleAbout === true && <ServicesHero pageTitle={name} imageUrl={photoGallery[1].image.url} mainphone={mainPhone} email={emails} description={description} tagline={c_tagline}></ServicesHero>}
         {/* <Banner name={name} tagline={c_tagline} photoGallery={photoGallery}/> */}
         {/* {c_toggleAbout === true && <About description={description} mainphone={mainPhone} email={emails} />} */}
         {c_toggleServices === true && c_servicePhotos && c_servicePhotos.length >= 3 && (
@@ -175,13 +184,13 @@ const Location: Template<TemplateRenderProps> = ({
           />
         )}
         {c_toggleReviews === true && <Reviews entityid={id} title={"Reviews"}></Reviews>}
-        <LetsTalk
-          description={document.description}
+        {c_toggleHours === true && <LetsTalk
+          description={c_reachOut}
           emails={document.emails[0]}
           formattedPhone={mainPhone}
           hours={hours}
-        ></LetsTalk>
-        <ContactSection address={address} phone={mainPhone} email={emails} latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude}/>
+        ></LetsTalk>}
+        {c_toggleContact === true && <ContactSection address={address} phone={mainPhone} email={emails} latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude} contactmessage={c_contactMessage}/>}
         {c_toggleGallery === true && <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>}
       </PageLayout>
       </div>

@@ -9,9 +9,10 @@ export interface BannerProps {
   description: string;
   mainphone?: string;
   email?: string;
+  tagline?: string;
 }
 
-const ServicesHero = ({ pageTitle, imageUrl, description, mainphone, email }: BannerProps) => {
+const ServicesHero = ({ pageTitle, imageUrl, description, mainphone, email, tagline }: BannerProps) => {
   return (
     <div className="bg-white pb-14">
       <div className="relative">
@@ -28,11 +29,19 @@ const ServicesHero = ({ pageTitle, imageUrl, description, mainphone, email }: Ba
 
             <div className="relative px-6 py-24 sm:py-24 lg:px-8 lg:py-24 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <div className="hidden sm:mb-10 sm:flex">
-                </div>
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl" id="about">
                   {pageTitle}
                 </h1>
+                <div className="hidden sm:mt-10 sm:flex">
+                  <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    {tagline}{" "}
+                    <a
+                      href="/guided-advisor-finder"
+                      className="whitespace-nowrap font-semibold text-blue-950"
+                    >
+                    </a>
+                  </div>
+                </div>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                   {description}
                 </p>

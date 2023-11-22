@@ -10,13 +10,14 @@ export interface ContactSectionProps {
   email?: string;
   latitude: string;
   longitude: string;
+  contactmessage?: string;
 
 }
 
-const ContactSection = ({ address, phone, email, latitude, longitude }: ContactSectionProps) => {
+const ContactSection = ({ address, phone, email, latitude, longitude, contactmessage }: ContactSectionProps) => {
   return (
     <>
-      <div className="relative px-14 py-14 mx-32 isolate bg-white">
+      <div className="relative px-14 py-14 mx-auto isolate bg-white" id="contact">
         <div className="mx-auto grid max-w-7xl ">
         <div className="relative lg:static grid lg:grid-cols-2">
             <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -48,7 +49,8 @@ const ContactSection = ({ address, phone, email, latitude, longitude }: ContactS
 
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in Touch</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-              Connect with us! Whether you have questions, ideas, or just want to say hello, we're eager to hear from you. Reach out and let's start a conversation today.</p>
+                {contactmessage}
+              </p>
               <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
                 <div className="flex gap-x-4">
                   <dt className="flex-none">

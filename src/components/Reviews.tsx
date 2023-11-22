@@ -216,7 +216,7 @@ const Reviews = ({ title, entityid }: ReviewsProps) => {
 
   return (
     <>
-      <div className=" max-w-7xl mx-auto px-14 py-14">
+      <div className=" max-w-7xl mx-auto py-14">
         <h2 className="section text-4xl text-gray-900 text-center tracking-tight font-bold">
           <a id="reviews">{title}</a>
         </h2>

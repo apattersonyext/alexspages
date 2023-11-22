@@ -27,8 +27,8 @@ const LetsTalk = ({
   geocodedCoordinate,
 }: LetsTalkProps) => {
   return (
-    <div className="flex items-center justify-center">
-        <div className="max-w-7xl flex flex-col justify-center text-gray-900 px-14 py-14">
+    <div className="flex items-center justify-center px-14 py-14" id="hours">
+        <div className="max-w-7xl flex flex-col justify-center text-gray-900 ">
         {/* <Title
             value={`Let's Talk`}
             textSize="4xl"

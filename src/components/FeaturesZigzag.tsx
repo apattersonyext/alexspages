@@ -52,7 +52,7 @@ const FeaturesZigzag = ({
 
   return (
     <section>
-      <div className="max-w-7xl mx-auto px-14 py-14">
+      <div className="max-w-7xl mx-auto ">
         <div className="border-gray-800">
           {/* Section header */}
           <div className="max-w-4xl mx-auto text-center pb-12 md:pb-16">
