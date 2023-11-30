@@ -25,6 +25,8 @@ import FeaturesZigzag from "../components/FeaturesZigzag";
 import ServicesHero from "../components/ServicesHero";
 import StaticMap from "../components/StaticMap";
 import LetsTalk from "../components/LetsTalk";
+import LeadForm from '../components/LeadForm';
+
 
 
 
@@ -152,6 +154,7 @@ const Location: Template<TemplateRenderProps> = ({
     photoGallery,
     geocodedCoordinate,
     yextDisplayCoordinate,
+    c_formspreeLink,
     c_reachOut,
     c_toggleHours,
     c_toggleContact,
@@ -188,6 +191,7 @@ const Location: Template<TemplateRenderProps> = ({
           hours={hours}
         ></LetsTalk>}
         {c_toggleContact === true && <ContactSection address={address} phone={mainPhone} email={emails} latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude} contactmessage={c_contactMessage}/>}
+        <LeadForm/>
         {c_toggleGallery === true && <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>}
       </PageLayout>
       </div>

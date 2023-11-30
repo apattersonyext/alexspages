@@ -47,7 +47,7 @@ const ContactSection = ({ address, phone, email, latitude, longitude, contactmes
               </div> */}
               
 
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in Touch</h2>
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900">Get in Touch</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 {contactmessage}
               </p>
